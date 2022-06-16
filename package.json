@@ -1,0 +1,21 @@
+{
+  "name": "nasa-mission-control-dashboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "client": "npm start --prefix client",
+    "server": "npm run watch --prefix server",
+    "watch": "npm run server & npm run client",
+    "watch-serve": "npm run build --prefix client && npm run watch --prefix server",
+    "test": "npm run test --prefix server && npm run test --prefix client",
+    "install-server": "npm i --prefix server",
+    "install-client": "npm i --prefix client",
+    "install": "npm run install-server && npm run install-client",
+    "deploy": "npm run build --prefix client && npm start --prefix server",
+    "deploy-cluster": "npm run build --prefix client && npm run cluster --prefix server"
+  },
+  "keywords": [],
+  "author": "Atchyut Preetham Pulavarthi",
+  "license": "ISC"
+}
