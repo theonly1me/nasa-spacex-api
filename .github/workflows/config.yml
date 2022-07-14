@@ -8,9 +8,11 @@ jobs:
   build: 
     env: 
       CI: true
+      DB_URI: mongodb://localhost/nasa
     strategy:
       matrix: 
         node-version: [16.x, 14.x]
+        mongo-version: ['4.4']
     runs-on: ubuntu-latest
     steps: 
       - name: Checkout Code
@@ -19,6 +21,10 @@ jobs:
         uses: actions/setup-node@v2
         with: 
           node-version: ${{ matrix.node-version }}
+      - name: Use MongoDB from GitHub actions
+        uses: supercharge/mongo-db-github-action@1.6.0
+        with: 
+          mongodb-version: ${{matrix.mongodb-version}}
       - name: Install dependenceis
         run: npm install
       - name: Build client 
