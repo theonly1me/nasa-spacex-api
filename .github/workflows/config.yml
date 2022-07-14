@@ -12,7 +12,7 @@ jobs:
     strategy:
       matrix: 
         node-version: [16.x, 14.x]
-        mongo-version: ['4.4']
+        mongodb-version: ['4.4']
     runs-on: ubuntu-latest
     steps: 
       - name: Checkout Code
